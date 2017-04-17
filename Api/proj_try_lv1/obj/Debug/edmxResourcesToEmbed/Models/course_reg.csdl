@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Online_regModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Course_Type_Table">
+    <Key>
+      <PropertyRef Name="type_id" />
+    </Key>
+    <Property Name="type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type_name_" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Courses_Table" Relationship="Self.FK_Courses_Table_ToTable_1" FromRole="Course_Type_Table" ToRole="Courses_Table" />
+  </EntityType>
+  <EntityType Name="Courses_Table">
+    <Key>
+      <PropertyRef Name="Courses_Id" />
+    </Key>
+    <Property Name="Courses_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Program_ID" Type="Int32" Nullable="false" />
+    <Property Name="Course_Code" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Course_Title_" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cr_Hrs" Type="Int32" Nullable="false" />
+    <Property Name="Pre_requisite_id" Type="Int32" />
+    <Property Name="Semester_Number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Course_Type_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Course_Type_Table" Relationship="Self.FK_Courses_Table_ToTable_1" FromRole="Courses_Table" ToRole="Course_Type_Table" />
+    <NavigationProperty Name="degree_programs" Relationship="Self.FK_Courses_Table_ToTable" FromRole="Courses_Table" ToRole="degree_programs" />
+    <NavigationProperty Name="Courses_Table1" Relationship="Self.FK_Courses_Table_ToTable_2" FromRole="Courses_Table" ToRole="Courses_Table1" />
+    <NavigationProperty Name="Courses_Table2" Relationship="Self.FK_Courses_Table_ToTable_2" FromRole="Courses_Table1" ToRole="Courses_Table" />
+    <NavigationProperty Name="Offerd_course_table" Relationship="Self.FK_Offerd_course_table_ToTable" FromRole="Courses_Table" ToRole="Offerd_course_table" />
+  </EntityType>
+  <EntityType Name="degree_programs">
+    <Key>
+      <PropertyRef Name="degree_id" />
+    </Key>
+    <Property Name="degree_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="degree_title_" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="short_title_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="department_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Courses_Table" Relationship="Self.FK_Courses_Table_ToTable" FromRole="degree_programs" ToRole="Courses_Table" />
+    <NavigationProperty Name="Department_Table" Relationship="Self.FK_degree_programs_ToTable" FromRole="degree_programs" ToRole="Department_Table" />
+    <NavigationProperty Name="Students_Table" Relationship="Self.FK_Students_Table_ToTable" FromRole="degree_programs" ToRole="Students_Table" />
+  </EntityType>
+  <EntityType Name="Department_Table">
+    <Key>
+      <PropertyRef Name="department_id" />
+    </Key>
+    <Property Name="department_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="department_name_" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="degree_programs" Relationship="Self.FK_degree_programs_ToTable" FromRole="Department_Table" ToRole="degree_programs" />
+    <NavigationProperty Name="Teacher_Table" Relationship="Self.FK_Teacher_Table_ToTable" FromRole="Department_Table" ToRole="Teacher_Table" />
+  </EntityType>
+  <EntityType Name="Offerd_course_table">
+    <Key>
+      <PropertyRef Name="offered_course_Id" />
+    </Key>
+    <Property Name="offered_course_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Courses_Id" Type="Int32" Nullable="false" />
+    <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Teacher_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Courses_Table" Relationship="Self.FK_Offerd_course_table_ToTable" FromRole="Offerd_course_table" ToRole="Courses_Table" />
+    <NavigationProperty Name="Teacher_Table" Relationship="Self.FK_Offerd_course_table_ToTable_1" FromRole="Offerd_course_table" ToRole="Teacher_Table" />
+    <NavigationProperty Name="Registerd_courses_Table" Relationship="Self.FK_Registerd_courses_Table_ToTable_2" FromRole="Offerd_course_table" ToRole="Registerd_courses_Table" />
+  </EntityType>
+  <EntityType Name="Registerd_courses_Table">
+    <Key>
+      <PropertyRef Name="reg_crs_id" />
+    </Key>
+    <Property Name="reg_crs_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="offered_course_Id" Type="Int32" Nullable="false" />
+    <Property Name="status_Id" Type="Int32" Nullable="false" />
+    <Property Name="Remark_Id" Type="Int32" Nullable="false" />
+    <Property Name="std_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Offerd_course_table" Relationship="Self.FK_Registerd_courses_Table_ToTable_2" FromRole="Registerd_courses_Table" ToRole="Offerd_course_table" />
+    <NavigationProperty Name="Remarks_Table" Relationship="Self.FK_Registerd_courses_Table_ToTable" FromRole="Registerd_courses_Table" ToRole="Remarks_Table" />
+    <NavigationProperty Name="status_Table" Relationship="Self.FK_Registerd_courses_Table_ToTable_1" FromRole="Registerd_courses_Table" ToRole="status_Table" />
+    <NavigationProperty Name="Students_Table" Relationship="Self.FK_Registerd_courses_Table_ToTable_3" FromRole="Registerd_courses_Table" ToRole="Students_Table" />
+  </EntityType>
+  <EntityType Name="Remarks_Table">
+    <Key>
+      <PropertyRef Name="Remark_Id" />
+    </Key>
+    <Property Name="Remark_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Remark_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Registerd_courses_Table" Relationship="Self.FK_Registerd_courses_Table_ToTable" FromRole="Remarks_Table" ToRole="Registerd_courses_Table" />
+  </EntityType>
+  <EntityType Name="status_Table">
+    <Key>
+      <PropertyRef Name="status_Id" />
+    </Key>
+    <Property Name="status_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Registerd_courses_Table" Relationship="Self.FK_Registerd_courses_Table_ToTable_1" FromRole="status_Table" ToRole="Registerd_courses_Table" />
+  </EntityType>
+  <EntityType Name="Students_Table">
+    <Key>
+      <PropertyRef Name="std_id" />
+    </Key>
+    <Property Name="std_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="registration_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="registration_number_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cell_number_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="degree_program_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="degree_programs" Relationship="Self.FK_Students_Table_ToTable" FromRole="Students_Table" ToRole="degree_programs" />
+    <NavigationProperty Name="Registerd_courses_Table" Relationship="Self.FK_Registerd_courses_Table_ToTable_3" FromRole="Students_Table" ToRole="Registerd_courses_Table" />
+  </EntityType>
+  <EntityType Name="Teacher_Table">
+    <Key>
+      <PropertyRef Name="Teacher_Id" />
+    </Key>
+    <Property Name="Teacher_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Employe_ID_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name_" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cell_Number_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Department_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department_Table" Relationship="Self.FK_Teacher_Table_ToTable" FromRole="Teacher_Table" ToRole="Department_Table" />
+    <NavigationProperty Name="Offerd_course_table" Relationship="Self.FK_Offerd_course_table_ToTable_1" FromRole="Teacher_Table" ToRole="Offerd_course_table" />
+  </EntityType>
+  <Association Name="FK_Courses_Table_ToTable_1">
+    <End Role="Course_Type_Table" Type="Self.Course_Type_Table" Multiplicity="1" />
+    <End Role="Courses_Table" Type="Self.Courses_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course_Type_Table">
+        <PropertyRef Name="type_id" />
+      </Principal>
+      <Dependent Role="Courses_Table">
+        <PropertyRef Name="Course_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_Table_ToTable">
+    <End Role="degree_programs" Type="Self.degree_programs" Multiplicity="1" />
+    <End Role="Courses_Table" Type="Self.Courses_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="degree_programs">
+        <PropertyRef Name="degree_id" />
+      </Principal>
+      <Dependent Role="Courses_Table">
+        <PropertyRef Name="Program_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_Table_ToTable_2">
+    <End Role="Courses_Table" Type="Self.Courses_Table" Multiplicity="0..1" />
+    <End Role="Courses_Table1" Type="Self.Courses_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_Table">
+        <PropertyRef Name="Courses_Id" />
+      </Principal>
+      <Dependent Role="Courses_Table1">
+        <PropertyRef Name="Pre_requisite_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offerd_course_table_ToTable">
+    <End Role="Courses_Table" Type="Self.Courses_Table" Multiplicity="1" />
+    <End Role="Offerd_course_table" Type="Self.Offerd_course_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_Table">
+        <PropertyRef Name="Courses_Id" />
+      </Principal>
+      <Dependent Role="Offerd_course_table">
+        <PropertyRef Name="Courses_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_degree_programs_ToTable">
+    <End Role="Department_Table" Type="Self.Department_Table" Multiplicity="1" />
+    <End Role="degree_programs" Type="Self.degree_programs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department_Table">
+        <PropertyRef Name="department_id" />
+      </Principal>
+      <Dependent Role="degree_programs">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_Table_ToTable">
+    <End Role="degree_programs" Type="Self.degree_programs" Multiplicity="1" />
+    <End Role="Students_Table" Type="Self.Students_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="degree_programs">
+        <PropertyRef Name="degree_id" />
+      </Principal>
+      <Dependent Role="Students_Table">
+        <PropertyRef Name="degree_program_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Table_ToTable">
+    <End Role="Department_Table" Type="Self.Department_Table" Multiplicity="1" />
+    <End Role="Teacher_Table" Type="Self.Teacher_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department_Table">
+        <PropertyRef Name="department_id" />
+      </Principal>
+      <Dependent Role="Teacher_Table">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Offerd_course_table_ToTable_1">
+    <End Role="Teacher_Table" Type="Self.Teacher_Table" Multiplicity="1" />
+    <End Role="Offerd_course_table" Type="Self.Offerd_course_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher_Table">
+        <PropertyRef Name="Teacher_Id" />
+      </Principal>
+      <Dependent Role="Offerd_course_table">
+        <PropertyRef Name="Teacher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registerd_courses_Table_ToTable_2">
+    <End Role="Offerd_course_table" Type="Self.Offerd_course_table" Multiplicity="1" />
+    <End Role="Registerd_courses_Table" Type="Self.Registerd_courses_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Offerd_course_table">
+        <PropertyRef Name="offered_course_Id" />
+      </Principal>
+      <Dependent Role="Registerd_courses_Table">
+        <PropertyRef Name="offered_course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registerd_courses_Table_ToTable">
+    <End Role="Remarks_Table" Type="Self.Remarks_Table" Multiplicity="1" />
+    <End Role="Registerd_courses_Table" Type="Self.Registerd_courses_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Remarks_Table">
+        <PropertyRef Name="Remark_Id" />
+      </Principal>
+      <Dependent Role="Registerd_courses_Table">
+        <PropertyRef Name="Remark_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registerd_courses_Table_ToTable_1">
+    <End Role="status_Table" Type="Self.status_Table" Multiplicity="1" />
+    <End Role="Registerd_courses_Table" Type="Self.Registerd_courses_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status_Table">
+        <PropertyRef Name="status_Id" />
+      </Principal>
+      <Dependent Role="Registerd_courses_Table">
+        <PropertyRef Name="status_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registerd_courses_Table_ToTable_3">
+    <End Role="Students_Table" Type="Self.Students_Table" Multiplicity="1" />
+    <End Role="Registerd_courses_Table" Type="Self.Registerd_courses_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students_Table">
+        <PropertyRef Name="std_id" />
+      </Principal>
+      <Dependent Role="Registerd_courses_Table">
+        <PropertyRef Name="std_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Online_regEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Course_Type_Table" EntityType="Self.Course_Type_Table" />
+    <EntitySet Name="Courses_Table" EntityType="Self.Courses_Table" />
+    <EntitySet Name="degree_programs" EntityType="Self.degree_programs" />
+    <EntitySet Name="Department_Table" EntityType="Self.Department_Table" />
+    <EntitySet Name="Offerd_course_table" EntityType="Self.Offerd_course_table" />
+    <EntitySet Name="Registerd_courses_Table" EntityType="Self.Registerd_courses_Table" />
+    <EntitySet Name="Remarks_Table" EntityType="Self.Remarks_Table" />
+    <EntitySet Name="status_Table" EntityType="Self.status_Table" />
+    <EntitySet Name="Students_Table" EntityType="Self.Students_Table" />
+    <EntitySet Name="Teacher_Table" EntityType="Self.Teacher_Table" />
+    <AssociationSet Name="FK_Courses_Table_ToTable_1" Association="Self.FK_Courses_Table_ToTable_1">
+      <End Role="Course_Type_Table" EntitySet="Course_Type_Table" />
+      <End Role="Courses_Table" EntitySet="Courses_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_Table_ToTable" Association="Self.FK_Courses_Table_ToTable">
+      <End Role="degree_programs" EntitySet="degree_programs" />
+      <End Role="Courses_Table" EntitySet="Courses_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_Table_ToTable_2" Association="Self.FK_Courses_Table_ToTable_2">
+      <End Role="Courses_Table" EntitySet="Courses_Table" />
+      <End Role="Courses_Table1" EntitySet="Courses_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offerd_course_table_ToTable" Association="Self.FK_Offerd_course_table_ToTable">
+      <End Role="Courses_Table" EntitySet="Courses_Table" />
+      <End Role="Offerd_course_table" EntitySet="Offerd_course_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_degree_programs_ToTable" Association="Self.FK_degree_programs_ToTable">
+      <End Role="Department_Table" EntitySet="Department_Table" />
+      <End Role="degree_programs" EntitySet="degree_programs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_Table_ToTable" Association="Self.FK_Students_Table_ToTable">
+      <End Role="degree_programs" EntitySet="degree_programs" />
+      <End Role="Students_Table" EntitySet="Students_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Table_ToTable" Association="Self.FK_Teacher_Table_ToTable">
+      <End Role="Department_Table" EntitySet="Department_Table" />
+      <End Role="Teacher_Table" EntitySet="Teacher_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Offerd_course_table_ToTable_1" Association="Self.FK_Offerd_course_table_ToTable_1">
+      <End Role="Teacher_Table" EntitySet="Teacher_Table" />
+      <End Role="Offerd_course_table" EntitySet="Offerd_course_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registerd_courses_Table_ToTable_2" Association="Self.FK_Registerd_courses_Table_ToTable_2">
+      <End Role="Offerd_course_table" EntitySet="Offerd_course_table" />
+      <End Role="Registerd_courses_Table" EntitySet="Registerd_courses_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registerd_courses_Table_ToTable" Association="Self.FK_Registerd_courses_Table_ToTable">
+      <End Role="Remarks_Table" EntitySet="Remarks_Table" />
+      <End Role="Registerd_courses_Table" EntitySet="Registerd_courses_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registerd_courses_Table_ToTable_1" Association="Self.FK_Registerd_courses_Table_ToTable_1">
+      <End Role="status_Table" EntitySet="status_Table" />
+      <End Role="Registerd_courses_Table" EntitySet="Registerd_courses_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registerd_courses_Table_ToTable_3" Association="Self.FK_Registerd_courses_Table_ToTable_3">
+      <End Role="Students_Table" EntitySet="Students_Table" />
+      <End Role="Registerd_courses_Table" EntitySet="Registerd_courses_Table" />
+    </AssociationSet>
+    <EntitySet Name="S_Courses_Table" EntityType="Online_regModel.S_Courses_Table" />
+  </EntityContainer>
+  <EntityType Name="S_Courses_Table">
+    <Key>
+      <PropertyRef Name="S_courses_Id" />
+    </Key>
+    <Property Name="S_courses_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="S_courses" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Course_reg_DatabaseModelStoreContainer" CdmEntityContainer="Course_reg_DatabaseEntities">
+    <EntitySetMapping Name="CourcesTables">
+      <EntityTypeMapping TypeName="Course_reg_DatabaseModel.CourcesTable">
+        <MappingFragment StoreEntitySet="CourcesTable">
+          <ScalarProperty Name="crs_Id" ColumnName="crs_Id" />
+          <ScalarProperty Name="crs_name" ColumnName="crs_name" />
+          <ScalarProperty Name="crs_title" ColumnName="crs_title" />
+          <ScalarProperty Name="crs_pre_rac" ColumnName="crs_pre_rac" />
+          <ScalarProperty Name="crs_crdt_hours" ColumnName="crs_crdt_hours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="offerd_courseTable">
+      <EntityTypeMapping TypeName="Course_reg_DatabaseModel.offerd_courseTable">
+        <MappingFragment StoreEntitySet="offerd_courseTable">
+          <ScalarProperty Name="offerd_crs_Id" ColumnName="offerd_crs_Id" />
+          <ScalarProperty Name="crs_id" ColumnName="crs_id" />
+          <ScalarProperty Name="session" ColumnName="session" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registerd_crs_Table">
+      <EntityTypeMapping TypeName="Course_reg_DatabaseModel.registerd_crs_Table">
+        <MappingFragment StoreEntitySet="registerd_crs_Table">
+          <ScalarProperty Name="reg_crs_Id" ColumnName="reg_crs_Id" />
+          <ScalarProperty Name="std_id" ColumnName="std_id" />
+          <ScalarProperty Name="offer_crs_id" ColumnName="offer_crs_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentsTables">
+      <EntityTypeMapping TypeName="Course_reg_DatabaseModel.studentsTable">
+        <MappingFragment StoreEntitySet="studentsTable">
+          <ScalarProperty Name="std_Id" ColumnName="std_Id" />
+          <ScalarProperty Name="std_name" ColumnName="std_name" />
+          <ScalarProperty Name="std_deprt" ColumnName="std_deprt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

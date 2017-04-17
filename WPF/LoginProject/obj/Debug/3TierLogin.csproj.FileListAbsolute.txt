@@ -1,0 +1,88 @@
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\bin\Debug\LoginProject.exe.config
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\bin\Debug\LoginProject.exe
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\bin\Debug\LoginProject.pdb
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\3TierLogin.csprojResolveAssemblyReference.cache
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\App.g.cs
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\LoginProject_MarkupCompile.cache
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\LoginProject_MarkupCompile.lref
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\LoginProject.g.resources
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\LoginProject.Properties.Resources.resources
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\3TierLogin.csproj.GenerateResource.Cache
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\LoginProject.exe
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\LoginProject.pdb
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\Signup.g.cs
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\Signup.baml
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\Login.g.cs
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\Login.baml
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\DataWindow.g.cs
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\obj\Debug\DataWindow.baml
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LENOVO.PC\documents\visual studio 2015\Projects\LoginProject\LoginProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\bin\Debug\LoginProject.exe.config
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\LoginProject.exe
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\LoginProject.pdb
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\3TierLogin.csprojResolveAssemblyReference.cache
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\DataWindow.g.cs
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\Login.g.cs
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\Signup.g.cs
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\App.g.cs
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\LoginProject_MarkupCompile.cache
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\LoginProject_MarkupCompile.lref
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\bin\Debug\LoginProject.exe
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\bin\Debug\LoginProject.pdb
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\DataWindow.baml
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\Login.baml
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\Signup.baml
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\LoginProject.g.resources
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\LoginProject.Properties.Resources.resources
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\3TierLogin.csproj.GenerateResource.Cache
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\coures_registration.g.cs
+C:\Users\Ahmad khan\Desktop\LoginProject\LoginProject\obj\Debug\coures_registration.baml
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\bin\Debug\LoginProject.exe.config
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\LoginProject.exe
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\LoginProject.pdb
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\bin\Debug\LoginProject.exe
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\bin\Debug\LoginProject.pdb
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\3TierLogin.csprojResolveAssemblyReference.cache
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\coures_registration.g.cs
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\DataWindow.g.cs
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\Login.g.cs
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\Signup.g.cs
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\App.g.cs
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\LoginProject_MarkupCompile.cache
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\LoginProject_MarkupCompile.lref
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\coures_registration.baml
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\DataWindow.baml
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\Login.baml
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\Signup.baml
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\LoginProject.g.resources
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\LoginProject.Properties.Resources.resources
+C:\Users\Ahmad khan\Desktop\wait\LoginProject\LoginProject\obj\Debug\3TierLogin.csproj.GenerateResource.Cache
+C:\Users\Ahmad khan\Desktop\project\LoginProject\bin\Debug\LoginProject.exe.config
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\LoginProject.exe
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\LoginProject.pdb
+C:\Users\Ahmad khan\Desktop\project\LoginProject\bin\Debug\LoginProject.exe
+C:\Users\Ahmad khan\Desktop\project\LoginProject\bin\Debug\LoginProject.pdb
+C:\Users\Ahmad khan\Desktop\project\LoginProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ahmad khan\Desktop\project\LoginProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\3TierLogin.csprojResolveAssemblyReference.cache
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\coures_registration.g.cs
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\DataWindow.g.cs
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\Login.g.cs
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\Signup.g.cs
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\App.g.cs
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\LoginProject_MarkupCompile.cache
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\LoginProject_MarkupCompile.lref
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\coures_registration.baml
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\DataWindow.baml
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\Login.baml
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\Signup.baml
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\LoginProject.g.resources
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\LoginProject.Properties.Resources.resources
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\3TierLogin.csproj.GenerateResource.Cache
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\Projc_crs.g.cs
+C:\Users\Ahmad khan\Desktop\project\LoginProject\obj\Debug\Projc_crs.baml

@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Course_reg_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CourcesTable">
+          <Key>
+            <PropertyRef Name="crs_Id" />
+          </Key>
+          <Property Name="crs_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="crs_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="crs_title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="crs_pre_rac" Type="int" Nullable="false" />
+          <Property Name="crs_crdt_hours" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="offerd_courseTable">
+          <Key>
+            <PropertyRef Name="offerd_crs_Id" />
+          </Key>
+          <Property Name="offerd_crs_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="crs_id" Type="int" Nullable="false" />
+          <Property Name="session" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="registerd_crs_Table">
+          <Key>
+            <PropertyRef Name="reg_crs_Id" />
+          </Key>
+          <Property Name="reg_crs_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="std_id" Type="int" Nullable="false" />
+          <Property Name="offer_crs_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="studentsTable">
+          <Key>
+            <PropertyRef Name="std_Id" />
+          </Key>
+          <Property Name="std_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="std_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="std_deprt" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_offerd_courseTable_ToTable">
+          <End Role="CourcesTable" Type="Self.CourcesTable" Multiplicity="1" />
+          <End Role="offerd_courseTable" Type="Self.offerd_courseTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourcesTable">
+              <PropertyRef Name="crs_Id" />
+            </Principal>
+            <Dependent Role="offerd_courseTable">
+              <PropertyRef Name="crs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_registerd_crs_Table_ToTable">
+          <End Role="studentsTable" Type="Self.studentsTable" Multiplicity="1" />
+          <End Role="registerd_crs_Table" Type="Self.registerd_crs_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="studentsTable">
+              <PropertyRef Name="std_Id" />
+            </Principal>
+            <Dependent Role="registerd_crs_Table">
+              <PropertyRef Name="std_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_registerd_crs_Table_ToTable_1">
+          <End Role="offerd_courseTable" Type="Self.offerd_courseTable" Multiplicity="1" />
+          <End Role="registerd_crs_Table" Type="Self.registerd_crs_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="offerd_courseTable">
+              <PropertyRef Name="offerd_crs_Id" />
+            </Principal>
+            <Dependent Role="registerd_crs_Table">
+              <PropertyRef Name="offer_crs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Course_reg_DatabaseModelStoreContainer">
+          <EntitySet Name="CourcesTable" EntityType="Self.CourcesTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="offerd_courseTable" EntityType="Self.offerd_courseTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="registerd_crs_Table" EntityType="Self.registerd_crs_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="studentsTable" EntityType="Self.studentsTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_offerd_courseTable_ToTable" Association="Self.FK_offerd_courseTable_ToTable">
+            <End Role="CourcesTable" EntitySet="CourcesTable" />
+            <End Role="offerd_courseTable" EntitySet="offerd_courseTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_registerd_crs_Table_ToTable" Association="Self.FK_registerd_crs_Table_ToTable">
+            <End Role="studentsTable" EntitySet="studentsTable" />
+            <End Role="registerd_crs_Table" EntitySet="registerd_crs_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_registerd_crs_Table_ToTable_1" Association="Self.FK_registerd_crs_Table_ToTable_1">
+            <End Role="offerd_courseTable" EntitySet="offerd_courseTable" />
+            <End Role="registerd_crs_Table" EntitySet="registerd_crs_Table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Course_reg_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CourcesTable">
+          <Key>
+            <PropertyRef Name="crs_Id" />
+          </Key>
+          <Property Name="crs_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="crs_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="crs_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="crs_pre_rac" Type="Int32" Nullable="false" />
+          <Property Name="crs_crdt_hours" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="offerd_courseTable" Relationship="Self.FK_offerd_courseTable_ToTable" FromRole="CourcesTable" ToRole="offerd_courseTable" />
+        </EntityType>
+        <EntityType Name="offerd_courseTable">
+          <Key>
+            <PropertyRef Name="offerd_crs_Id" />
+          </Key>
+          <Property Name="offerd_crs_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="crs_id" Type="Int32" Nullable="false" />
+          <Property Name="session" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CourcesTable" Relationship="Self.FK_offerd_courseTable_ToTable" FromRole="offerd_courseTable" ToRole="CourcesTable" />
+          <NavigationProperty Name="registerd_crs_Table" Relationship="Self.FK_registerd_crs_Table_ToTable_1" FromRole="offerd_courseTable" ToRole="registerd_crs_Table" />
+        </EntityType>
+        <EntityType Name="registerd_crs_Table">
+          <Key>
+            <PropertyRef Name="reg_crs_Id" />
+          </Key>
+          <Property Name="reg_crs_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="std_id" Type="Int32" Nullable="false" />
+          <Property Name="offer_crs_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="offerd_courseTable" Relationship="Self.FK_registerd_crs_Table_ToTable_1" FromRole="registerd_crs_Table" ToRole="offerd_courseTable" />
+          <NavigationProperty Name="studentsTable" Relationship="Self.FK_registerd_crs_Table_ToTable" FromRole="registerd_crs_Table" ToRole="studentsTable" />
+        </EntityType>
+        <EntityType Name="studentsTable">
+          <Key>
+            <PropertyRef Name="std_Id" />
+          </Key>
+          <Property Name="std_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="std_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="std_deprt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="registerd_crs_Table" Relationship="Self.FK_registerd_crs_Table_ToTable" FromRole="studentsTable" ToRole="registerd_crs_Table" />
+        </EntityType>
+        <Association Name="FK_offerd_courseTable_ToTable">
+          <End Role="CourcesTable" Type="Self.CourcesTable" Multiplicity="1" />
+          <End Role="offerd_courseTable" Type="Self.offerd_courseTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourcesTable">
+              <PropertyRef Name="crs_Id" />
+            </Principal>
+            <Dependent Role="offerd_courseTable">
+              <PropertyRef Name="crs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_registerd_crs_Table_ToTable_1">
+          <End Role="offerd_courseTable" Type="Self.offerd_courseTable" Multiplicity="1" />
+          <End Role="registerd_crs_Table" Type="Self.registerd_crs_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="offerd_courseTable">
+              <PropertyRef Name="offerd_crs_Id" />
+            </Principal>
+            <Dependent Role="registerd_crs_Table">
+              <PropertyRef Name="offer_crs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_registerd_crs_Table_ToTable">
+          <End Role="studentsTable" Type="Self.studentsTable" Multiplicity="1" />
+          <End Role="registerd_crs_Table" Type="Self.registerd_crs_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="studentsTable">
+              <PropertyRef Name="std_Id" />
+            </Principal>
+            <Dependent Role="registerd_crs_Table">
+              <PropertyRef Name="std_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Course_reg_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CourcesTables" EntityType="Self.CourcesTable" />
+          <EntitySet Name="offerd_courseTable" EntityType="Self.offerd_courseTable" />
+          <EntitySet Name="registerd_crs_Table" EntityType="Self.registerd_crs_Table" />
+          <EntitySet Name="studentsTables" EntityType="Self.studentsTable" />
+          <AssociationSet Name="FK_offerd_courseTable_ToTable" Association="Self.FK_offerd_courseTable_ToTable">
+            <End Role="CourcesTable" EntitySet="CourcesTables" />
+            <End Role="offerd_courseTable" EntitySet="offerd_courseTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_registerd_crs_Table_ToTable_1" Association="Self.FK_registerd_crs_Table_ToTable_1">
+            <End Role="offerd_courseTable" EntitySet="offerd_courseTable" />
+            <End Role="registerd_crs_Table" EntitySet="registerd_crs_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_registerd_crs_Table_ToTable" Association="Self.FK_registerd_crs_Table_ToTable">
+            <End Role="studentsTable" EntitySet="studentsTables" />
+            <End Role="registerd_crs_Table" EntitySet="registerd_crs_Table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Course_reg_DatabaseModelStoreContainer" CdmEntityContainer="Course_reg_DatabaseEntities">
+          <EntitySetMapping Name="CourcesTables">
+            <EntityTypeMapping TypeName="Course_reg_DatabaseModel.CourcesTable">
+              <MappingFragment StoreEntitySet="CourcesTable">
+                <ScalarProperty Name="crs_Id" ColumnName="crs_Id" />
+                <ScalarProperty Name="crs_name" ColumnName="crs_name" />
+                <ScalarProperty Name="crs_title" ColumnName="crs_title" />
+                <ScalarProperty Name="crs_pre_rac" ColumnName="crs_pre_rac" />
+                <ScalarProperty Name="crs_crdt_hours" ColumnName="crs_crdt_hours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="offerd_courseTable">
+            <EntityTypeMapping TypeName="Course_reg_DatabaseModel.offerd_courseTable">
+              <MappingFragment StoreEntitySet="offerd_courseTable">
+                <ScalarProperty Name="offerd_crs_Id" ColumnName="offerd_crs_Id" />
+                <ScalarProperty Name="crs_id" ColumnName="crs_id" />
+                <ScalarProperty Name="session" ColumnName="session" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="registerd_crs_Table">
+            <EntityTypeMapping TypeName="Course_reg_DatabaseModel.registerd_crs_Table">
+              <MappingFragment StoreEntitySet="registerd_crs_Table">
+                <ScalarProperty Name="reg_crs_Id" ColumnName="reg_crs_Id" />
+                <ScalarProperty Name="std_id" ColumnName="std_id" />
+                <ScalarProperty Name="offer_crs_id" ColumnName="offer_crs_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="studentsTables">
+            <EntityTypeMapping TypeName="Course_reg_DatabaseModel.studentsTable">
+              <MappingFragment StoreEntitySet="studentsTable">
+                <ScalarProperty Name="std_Id" ColumnName="std_Id" />
+                <ScalarProperty Name="std_name" ColumnName="std_name" />
+                <ScalarProperty Name="std_deprt" ColumnName="std_deprt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

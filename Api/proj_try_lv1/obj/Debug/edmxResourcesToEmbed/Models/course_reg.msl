@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Online_regModelStoreContainer" CdmEntityContainer="Online_regEntities">
+    <EntitySetMapping Name="Course_Type_Table">
+      <EntityTypeMapping TypeName="Online_regModel.Course_Type_Table">
+        <MappingFragment StoreEntitySet="Course_Type_Table">
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="type_name_" ColumnName="type_name " />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses_Table">
+      <EntityTypeMapping TypeName="Online_regModel.Courses_Table">
+        <MappingFragment StoreEntitySet="Courses_Table">
+          <ScalarProperty Name="Courses_Id" ColumnName="Courses_Id" />
+          <ScalarProperty Name="Program_ID" ColumnName="Program_ID" />
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="Course_Title_" ColumnName="Course_Title " />
+          <ScalarProperty Name="Cr_Hrs" ColumnName="Cr_Hrs" />
+          <ScalarProperty Name="Pre_requisite_id" ColumnName="Pre-requisite_id" />
+          <ScalarProperty Name="Semester_Number" ColumnName="Semester_Number" />
+          <ScalarProperty Name="Course_Type_ID" ColumnName="Course_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="degree_programs">
+      <EntityTypeMapping TypeName="Online_regModel.degree_programs">
+        <MappingFragment StoreEntitySet="degree_programs">
+          <ScalarProperty Name="degree_id" ColumnName="degree_id" />
+          <ScalarProperty Name="degree_title_" ColumnName="degree_title " />
+          <ScalarProperty Name="short_title_" ColumnName="short_title " />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_Table">
+      <EntityTypeMapping TypeName="Online_regModel.Department_Table">
+        <MappingFragment StoreEntitySet="Department_Table">
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="department_name_" ColumnName="department_name " />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offerd_course_table">
+      <EntityTypeMapping TypeName="Online_regModel.Offerd_course_table">
+        <MappingFragment StoreEntitySet="Offerd_course_table">
+          <ScalarProperty Name="offered_course_Id" ColumnName="offered_course_Id" />
+          <ScalarProperty Name="Courses_Id" ColumnName="Courses_Id" />
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registerd_courses_Table">
+      <EntityTypeMapping TypeName="Online_regModel.Registerd_courses_Table">
+        <MappingFragment StoreEntitySet="Registerd_courses_Table">
+          <ScalarProperty Name="reg_crs_id" ColumnName="reg_crs_id" />
+          <ScalarProperty Name="offered_course_Id" ColumnName="offered_course_Id" />
+          <ScalarProperty Name="status_Id" ColumnName="status_Id" />
+          <ScalarProperty Name="Remark_Id" ColumnName="Remark_Id" />
+          <ScalarProperty Name="std_id" ColumnName="std_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remarks_Table">
+      <EntityTypeMapping TypeName="Online_regModel.Remarks_Table">
+        <MappingFragment StoreEntitySet="Remarks_Table">
+          <ScalarProperty Name="Remark_Id" ColumnName="Remark_Id" />
+          <ScalarProperty Name="Remark_title" ColumnName="Remark_title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status_Table">
+      <EntityTypeMapping TypeName="Online_regModel.status_Table">
+        <MappingFragment StoreEntitySet="status_Table">
+          <ScalarProperty Name="status_Id" ColumnName="status_Id" />
+          <ScalarProperty Name="status_title" ColumnName="status_title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students_Table">
+      <EntityTypeMapping TypeName="Online_regModel.Students_Table">
+        <MappingFragment StoreEntitySet="Students_Table">
+          <ScalarProperty Name="std_id" ColumnName="std_id" />
+          <ScalarProperty Name="registration_id" ColumnName="registration_id" />
+          <ScalarProperty Name="registration_number_" ColumnName="registration_number " />
+          <ScalarProperty Name="name_" ColumnName="name " />
+          <ScalarProperty Name="email_" ColumnName="email " />
+          <ScalarProperty Name="cell_number_" ColumnName="cell_number " />
+          <ScalarProperty Name="degree_program_id" ColumnName="degree_program_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teacher_Table">
+      <EntityTypeMapping TypeName="Online_regModel.Teacher_Table">
+        <MappingFragment StoreEntitySet="Teacher_Table">
+          <ScalarProperty Name="Teacher_Id" ColumnName="Teacher_Id" />
+          <ScalarProperty Name="Employe_ID_" ColumnName="Employe_ID " />
+          <ScalarProperty Name="Name_" ColumnName="Name " />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Cell_Number_" ColumnName="Cell_Number " />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_Courses_Table">
+      <EntityTypeMapping TypeName="Online_regModel.S_Courses_Table">
+        <MappingFragment StoreEntitySet="S_Courses_Table">
+          <ScalarProperty Name="S_courses" ColumnName="S_courses" />
+          <ScalarProperty Name="S_courses_Id" ColumnName="S_courses_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
